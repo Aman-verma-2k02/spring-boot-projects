@@ -1,0 +1,904 @@
+{
+	"info": {
+		"_postman_id": "ad39fb85-6c04-40c3-9517-d7b02d32c623",
+		"name": "FoodDeliverySystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42544804"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "addNewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Ravi Mehra\",\r\n  \"email\": \"ravi.mehra@example.com\",\r\n  \"address\": \"C-102, Sector 63, Noida, Uttar Pradesh, India\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-base-url}}",
+							"host": [
+								"{{user-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-base-url}}/3",
+							"host": [
+								"{{user-base-url}}"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{user-base-url}}/3",
+							"host": [
+								"{{user-base-url}}"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Aditya jain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-base-url}}/1",
+							"host": [
+								"{{user-base-url}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-base-url}}",
+							"host": [
+								"{{user-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(INTERNAL)addNewUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"name\": \"Ravi Mehra\",\r\n    \"email\": \"ravi.mehra@example.com\",\r\n    \"address\": \"C-102, Sector 63, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Neha Singh\",\r\n    \"email\": \"neha.singh@example.com\",\r\n    \"address\": \"D-45, Sector 22, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Vikram Joshi\",\r\n    \"email\": \"vikram.joshi@example.com\",\r\n    \"address\": \"E-78, Sector 15, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Priya Kapoor\",\r\n    \"email\": \"priya.kapoor@example.com\",\r\n    \"address\": \"F-19, Sector 50, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Ankit Verma\",\r\n    \"email\": \"ankit.verma@example.com\",\r\n    \"address\": \"G-33, Sector 62, Noida, Uttar Pradesh, India\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-base-url}}/internal",
+							"host": [
+								"{{user-base-url}}"
+							],
+							"path": [
+								"internal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restaurant-service",
+			"item": [
+				{
+					"name": "addNewRestaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"KFC\",\r\n    \"address\" : \"dlf mall of india, sector-18, noida\",\r\n    \"rating\" : 4.4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}",
+							"host": [
+								"{{restaurant-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRestaurant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"KFC\",\r\n    \"address\" : \"dlf mall of india, sector-18, noida\",\r\n    \"rating\" : 4.4\r\n}"
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}",
+							"host": [
+								"{{restaurant-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant-base-url}}/6",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRestaurantById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant-base-url}}/10",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRestaurantById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\" : 4.2,\r\n    \"name\" : \"Burger Singh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/9",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acceptOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2,\r\n    \"restaurantId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/order/accept",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"order",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prepareOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 2,\r\n    \"restaurantId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/order/prepare",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"order",
+								"prepare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(INTERNAL)addNewRestaurants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"name\": \"Spice Garden\",\r\n    \"address\": \"A-12, Sector 18, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Tandoori Junction\",\r\n    \"address\": \"B-45, Sector 50, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Curry House\",\r\n    \"address\": \"C-78, Sector 63, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Masala Trails\",\r\n    \"address\": \"D-22, Sector 15, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"The Biryani Spot\",\r\n    \"address\": \"E-90, Sector 62, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Chaat Street\",\r\n    \"address\": \"F-33, Sector 37, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"South Spice\",\r\n    \"address\": \"G-11, Sector 44, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Punjabi Zaika\",\r\n    \"address\": \"H-29, Sector 21, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Urban Thali\",\r\n    \"address\": \"I-56, Sector 61, Noida, Uttar Pradesh, India\"\r\n  },\r\n  {\r\n    \"name\": \"Desi Tandoor\",\r\n    \"address\": \"J-88, Sector 41, Noida, Uttar Pradesh, India\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/internal",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"internal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "createNewOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"userId\": 1,\r\n  \"restaurantId\": 501,\r\n  \"totalAmount\": 500.0,\r\n  \"orderItemRequestDtoList\": [\r\n    {\r\n      \"menuItemId\": 101,\r\n      \"quantity\": 2,\r\n      \"price\": 150.0\r\n    },\r\n    {\r\n      \"menuItemId\": 102,\r\n      \"quantity\": 1,\r\n      \"price\": 200.0\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{order-base-url}}",
+							"host": [
+								"{{order-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order-base-url}}/2",
+							"host": [
+								"{{order-base-url}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrderById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"userId\": 1,\r\n  \"restaurantId\": 501,\r\n  \"totalAmount\": 500.0,\r\n  \"orderItemRequestDtoList\": [\r\n    {\r\n      \"menuItemId\": 101,\r\n      \"quantity\": 2,\r\n      \"price\": 150.0\r\n    },\r\n    {\r\n      \"menuItemId\": 102,\r\n      \"quantity\": 1,\r\n      \"price\": 200.0\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{order-base-url}}/7",
+							"host": [
+								"{{order-base-url}}"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"DELIVERED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{order-base-url}}/9",
+							"host": [
+								"{{order-base-url}}"
+							],
+							"path": [
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findOrdersByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order-base-url}}/user?userId=1",
+							"host": [
+								"{{order-base-url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(INTERNAL)createNewOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"userId\": 2,\r\n        \"restaurantId\": 1,\r\n        \"totalAmount\": 820.0,\r\n        \"orderItemList\": [\r\n            {\r\n                \"menuItemId\": 1,\r\n                \"quantity\": 2,\r\n                \"price\": 250.0\r\n            },\r\n            {\r\n                \"menuItemId\": 2,\r\n                \"quantity\": 5,\r\n                \"price\": 40.0\r\n            },\r\n            {\r\n                \"menuItemId\": 8,\r\n                \"quantity\": 2,\r\n                \"price\": 40.0\r\n            },\r\n            {\r\n                \"menuItemId\": 10,\r\n                \"quantity\": 2,\r\n                \"price\": 20.0\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"userId\": 3,\r\n        \"restaurantId\": 1,\r\n        \"totalAmount\": 850.0,\r\n        \"orderItemList\": [\r\n            {\r\n                \"menuItemId\": 7,\r\n                \"quantity\": 2,\r\n                \"price\": 180.0\r\n            },\r\n            {\r\n                \"menuItemId\": 3,\r\n                \"quantity\": 2,\r\n                \"price\": 280.0\r\n            },\r\n            {\r\n                \"menuItemId\": 6,\r\n                \"quantity\": 1,\r\n                \"price\": 70.0\r\n            },\r\n            {\r\n                \"menuItemId\": 8,\r\n                \"quantity\": 1,\r\n                \"price\": 40.0\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"userId\": 4,\r\n        \"restaurantId\": 10,\r\n        \"totalAmount\": 1060.0,\r\n        \"orderItemList\": [\r\n            {\r\n                \"menuItemId\": 12,\r\n                \"quantity\": 3,\r\n                \"price\": 60.0\r\n            },\r\n            {\r\n                \"menuItemId\": 17,\r\n                \"quantity\": 2,\r\n                \"price\": 140.0\r\n            },\r\n            {\r\n                \"menuItemId\": 18,\r\n                \"quantity\": 2,\r\n                \"price\": 100.0\r\n            },\r\n            {\r\n                \"menuItemId\": 19,\r\n                \"quantity\": 2,\r\n                \"price\": 200.0\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"userId\": 5,\r\n        \"restaurantId\": 10,\r\n        \"totalAmount\": 1030.0,\r\n        \"orderItemList\": [\r\n            {\r\n                \"menuItemId\": 11,\r\n                \"quantity\": 2,\r\n                \"price\": 150.0\r\n            },\r\n            {\r\n                \"menuItemId\": 14,\r\n                \"quantity\": 2,\r\n                \"price\": 90.0\r\n            },\r\n            {\r\n                \"menuItemId\": 15,\r\n                \"quantity\": 1,\r\n                \"price\": 310.0\r\n            },\r\n            {\r\n                \"menuItemId\": 18,\r\n                \"quantity\": 1,\r\n                \"price\": 100.0\r\n            },\r\n            {\r\n                \"menuItemId\": 17,\r\n                \"quantity\": 1,\r\n                \"price\": 140.0\r\n            }\r\n        ]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{order-base-url}}/internal",
+							"host": [
+								"{{order-base-url}}"
+							],
+							"path": [
+								"internal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delivery-partner-service",
+			"item": [
+				{
+					"name": "addNewDeliveryPartner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Ravi Sharma\",\r\n  \"email\": \"ravi.sharma@example.com\",\r\n  \"address\": \"456 MG Road, Bengaluru, Karnataka, India\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDeliveryPartners",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Ravi Sharma\",\r\n  \"email\": \"ravi.sharma@example.com\",\r\n  \"address\": \"456 MG Road, Bengaluru, Karnataka, India\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeliveryPartnerById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Ravi Sharma\",\r\n  \"email\": \"ravi.sharma@example.com\",\r\n  \"address\": \"456 MG Road, Bengaluru, Karnataka, India\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}/23",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							],
+							"path": [
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDeliveryPartnerDetails",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\": \"Sneha Reddy\",\r\n        \"email\": \"sneha.reddy@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}/4",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"OFFLINE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}/6/status",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							],
+							"path": [
+								"6",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(INTERNAL)addNewDeliveryPartners",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n[\r\n  {\r\n    \"name\": \"Kunal Mehra\",\r\n    \"email\": \"kunal.mehra@deliverypartner.com\",\r\n    \"address\": \"Sector 44, Noida, Uttar Pradesh, 201301\"\r\n  },\r\n  {\r\n    \"name\": \"Sanya Bhatia\",\r\n    \"email\": \"sanya.bhatia@deliverypartner.com\",\r\n    \"address\": \"Sector 137, Noida, Uttar Pradesh, 201305\"\r\n  },\r\n  {\r\n    \"name\": \"Deepak Chauhan\",\r\n    \"email\": \"deepak.chauhan@deliverypartner.com\",\r\n    \"address\": \"Sector 63, Noida, Uttar Pradesh, 201301\"\r\n  },\r\n  {\r\n    \"name\": \"Meenal Kapoor\",\r\n    \"email\": \"meenal.kapoor@deliverypartner.com\",\r\n    \"address\": \"Sector 22, Noida, Uttar Pradesh, 201301\"\r\n  },\r\n  {\r\n    \"name\": \"Farhan Qureshi\",\r\n    \"email\": \"farhan.qureshi@deliverypartner.com\",\r\n    \"address\": \"Sector 71, Noida, Uttar Pradesh, 201301\"\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-partner-base-url}}/internal",
+							"host": [
+								"{{delivery-partner-base-url}}"
+							],
+							"path": [
+								"internal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delivery-service",
+			"item": [
+				{
+					"name": "createNewDelivery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n{\r\n    \"orderId\": 2,\r\n    \"source\": \"22 MG Road, Near Metro Station, Bengaluru, Karnataka - 560001\",\r\n    \"destination\": \"14 Park Street, Opp. The Park Hotel, Kolkata, West Bengal - 700016\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-base-url}}",
+							"host": [
+								"{{delivery-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPendingDeliveries",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDeliveries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"orderId\": 5,\r\n    \"source\": \"101 CG Road, Near Municipal Market, Ahmedabad, Gujarat - 380009\",\r\n    \"destination\": \"56 MI Road, Opp. Raj Mandir Cinema, Jaipur, Rajasthan - 302001\"\r\n  }\r\n"
+						},
+						"url": {
+							"raw": "{{delivery-base-url}}",
+							"host": [
+								"{{delivery-base-url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignDeliveryPartner",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"orderId\": 5,\r\n    \"source\": \"101 CG Road, Near Municipal Market, Ahmedabad, Gujarat - 380009\",\r\n    \"destination\": \"56 MI Road, Opp. Raj Mandir Cinema, Jaipur, Rajasthan - 302001\"\r\n  }\r\n"
+						},
+						"url": {
+							"raw": "{{delivery-base-url}}/1/assign/2",
+							"host": [
+								"{{delivery-base-url}}"
+							],
+							"path": [
+								"1",
+								"assign",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDeliveryStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"EN_ROUTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-base-url}}/4",
+							"host": [
+								"{{delivery-base-url}}"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "menu-item-service",
+			"item": [
+				{
+					"name": "addNewMenuItems",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"name\": \"Pani Puri\",\r\n    \"price\": 50.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Aloo Tikki\",\r\n    \"price\": 60.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Papdi Chaat\",\r\n    \"price\": 70.0,\r\n    \"available\": false\r\n  },\r\n  {\r\n    \"name\": \"Dahi Bhalla\",\r\n    \"price\": 80.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Bhel Puri\",\r\n    \"price\": 55.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Sev Puri\",\r\n    \"price\": 65.0,\r\n    \"available\": false\r\n  },\r\n  {\r\n    \"name\": \"Raj Kachori\",\r\n    \"price\": 90.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Kachori Sabzi\",\r\n    \"price\": 75.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Samosa Chaat\",\r\n    \"price\": 60.0,\r\n    \"available\": true\r\n  },\r\n  {\r\n    \"name\": \"Tikki Chaat\",\r\n    \"price\": 70.0,\r\n    \"available\": false\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/6/menu-items",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"6",
+								"menu-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllMenuItemsByRestId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant-base-url}}/1/menu-items",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"1",
+								"menu-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMenuItemById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant-base-url}}/4/menu-items/15",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"4",
+								"menu-items",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMenuItemById",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Paneer Sandwich\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{restaurant-base-url}}/4/menu-items/15",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"4",
+								"menu-items",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMenuItemById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{restaurant-base-url}}/4/menu-items/13",
+							"host": [
+								"{{restaurant-base-url}}"
+							],
+							"path": [
+								"4",
+								"menu-items",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user-base-url",
+			"value": ""
+		},
+		{
+			"key": "restaurant-base-url",
+			"value": ""
+		},
+		{
+			"key": "order-base-url",
+			"value": ""
+		},
+		{
+			"key": "delivery-partner-base-url",
+			"value": ""
+		},
+		{
+			"key": "delivery-base-url",
+			"value": ""
+		}
+	]
+}
